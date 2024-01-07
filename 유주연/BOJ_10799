@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+#include <stack>
+
+using namespace std;
+
+int main() {
+    string str;
+    cin >> str;
+    stack<char> stack;
+    int stick = 0;
+
+    for (int i=0; i<str.length(); i++) {
+        if (str[i] == '(') stack.push(str[i]);
+        else if (str[i] == ')') {
+            if (str[i-1] == '(') {
+                stack.pop();
+                stick += stack.size();
+            } else {
+                stack.pop();
+                stick += 1;
+            }
+        }
+    }
+    cout << stick;
+    return 0;
+}
