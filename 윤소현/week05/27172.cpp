@@ -22,7 +22,7 @@ int main()
 
     for(int i = 0; i < N; i++)
         for (int j = 2 * card[i]; j < MAX; j += card[i]) 
-            if (chk[j] == 1) { 
+            if (chk[j]) { 
                 scores[card[i]]++;
                 scores[j]--;
             }
