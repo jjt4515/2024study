@@ -4,7 +4,6 @@
 
 using namespace std;
 
-
 int main()
 {
     int N, num;
@@ -20,11 +19,11 @@ int main()
         chk[num] = 1;
     }
 
-    for(int i = 0; i < N; i++)
-        for (int j = 2 * card[i]; j < MAX; j += card[i]) 
-            if (chk[j]) { 
-                scores[card[i]]++;
-                scores[j]--;
+    for(int player = 0; player < N; player++)
+        for (int battle = 2 * card[player]; battle < MAX; battle += card[player]) 
+            if (chk[battle]) { 
+                scores[card[player]]++;
+                scores[battle]--;
             }
     
     for(int i = 0; i < N; i++)
