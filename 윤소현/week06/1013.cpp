@@ -5,8 +5,8 @@ using namespace std;
 
 bool matching(const string& number) 
 {
-    regex e("(100+1+|01)+");
-    return regex_match(number, e);
+    regex pattern("(100+1+|01)+");
+    return regex_match(number, pattern);
 }
 
 int main()
